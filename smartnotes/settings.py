@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # App
     'home',
     'notes',
+
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'myreactapp/static/carousel',
+            BASE_DIR / 'static/templates/',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -123,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'myreactapp/static/assets/',
+    BASE_DIR / 'static/',
 ]
 
 # Default primary key field type
