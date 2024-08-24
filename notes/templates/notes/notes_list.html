@@ -1,10 +1,14 @@
-{% extends "base.html"%}
-{% block content %}
-     <div>
-        {% for note in notes %}
-        <h2>{{ note.title }}</h2>
-        <p>{{ note.text }}</p>
-    {% endfor %}
-     </div> 
-    
-{% endblock %}
+{% extends "base.html"%} {% block content %}
+<!-- Photo Grid -->
+{% for note in notes %}
+<div class="w3-row" id="myGrid" style="margin-bottom: 128px">
+  <div class="w3-third">
+    <div>
+      <h2>{{ note.title }}</h2>
+      <p>{{ note.text }}</p>
+    </div>
+
+    <!-- <img src="/w3images/rocks.jpg" style="width: 100%" /> -->
+  </div>
+</div>
+{% endfor %} {% endblock %}
