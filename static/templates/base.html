@@ -22,7 +22,7 @@ img {margin-bottom: -7px}
     <i class="fa fa-remove"></i>
   </a>
   <div class="w3-bar-block w3-center">
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
+    
     <a href="{% url 'all.notes' %}" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Notes</a>
     <a href="{% url 'notes.new' %}" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Create New Note</a>
     <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
@@ -40,6 +40,8 @@ img {margin-bottom: -7px}
   <h1><b>PHOTOLIO</b></h1>
   <p><b>My Demo</b></p>
   <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">Toggle Grid Padding</button></p>
+  <a class="w3-padding-16"  href="{% url 'all.notes' %}"><button class="w3-button w3-black">Notes</button></a>
+  
 </header>
 {% block content %}
   {% endblock %}
@@ -58,13 +60,20 @@ img {margin-bottom: -7px}
   <a class="fa fa-instagram w3-hover-opacity"></a>
   <a class="fa fa-snapchat w3-hover-opacity"></a>
   <a class="fa fa-pinterest-p w3-hover-opacity"></a>
-  <a class="fa fa-twitter w3-hover-opacity"></a>
+  <a class="fa fa-twitter w3-hover-opacity" href="https://twitter.com/georgekwm1"></a>
   <a class="fa fa-linkedin w3-hover-opacity" href="https://linkedin.com/in/georgekwm1"></a>
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p class="w3-medium" id="year"></p>
 </footer>
  
 <script>
 // Toggle grid padding
+function get_year() {
+  var today = new Date();
+  var year = today.getFullYear();
+  return year;
+}
+document.getElementById("year").innerHTML = `©️ ${get_year()}`;
+
 function myFunction() {
   var x = document.getElementById("myGrid");
   if (x.className === "w3-row") {
