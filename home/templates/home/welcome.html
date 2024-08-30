@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <h1>This is my site</h1>
+{% extends "base.html"%} 
+
+{% block content %}
+<div class="w3-center w3-margin-bottom">
+    <h1><b>WELCOME TO MY NOTES</b></h1>
         <p>Today is {{today}}</p>
-    </div>
-</body>
-</html>
+</div>
+{% endblock %}

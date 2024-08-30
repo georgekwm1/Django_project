@@ -6,6 +6,7 @@
     <div>
      <a href="{{ note.id }}"><h2>{{ note.title }}</h2></a>
       <p>{{ note.text }}</p>
+      <a href="{% url 'note.delete' pk=note.id %}"><button class="w3-button w3-black">Delete</button></a>
     </div>
 
     <!-- <img src="/w3images/rocks.jpg" style="width: 100%" /> -->

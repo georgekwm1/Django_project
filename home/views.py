@@ -7,9 +7,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
-class HomeView(TemplateView):
-    template_name = 'home/welcome.html'
-    extra_content = {'today': datetime.today()}
+# class HomeView(TemplateView):
+#     template_name = 'home/welcome.html'
+#     extra_content = {'today': datetime.today()}
 
 
 class AuthorizedView(LoginRequiredMixin, TemplateView):
@@ -21,8 +21,8 @@ def home(request):
     return HttpResponse('Hello world!')
 
 
-# def welcome(request):
-#     return render(request, 'home/welcome.html', {'today': datetime.now()})
+def welcome(request):
+    return render(request, 'home/welcome.html', {'today': datetime.now()})
 
 
 # @login_required(login_url='/admin')
