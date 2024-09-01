@@ -1,15 +1,15 @@
-{% extends "base.html"%} {% block content %}
+{% extends "base.html"%}
+{% block content %}
 <!-- Photo Grid -->
-{% for note in notes %}
-<div class="w3-row" id="myGrid" style="margin-bottom: 128px">
-  <div class="w3-third">
+<div class="w3-row-padding" id="myGrid" style="margin-bottom: 128px">
+  {% for note in notes %}
+  <div class="w3-quarter">
     <div>
-     <a href="{{ note.id }}"><h2>{{ note.title }}</h2></a>
+      <a href="{{ note.id }}"><h2>{{ note.title }}</h2></a>
       <p>{{ note.text }}</p>
       <a href="{% url 'note.delete' pk=note.id %}"><button class="w3-button w3-black">Delete</button></a>
     </div>
-
-    <!-- <img src="/w3images/rocks.jpg" style="width: 100%" /> -->
   </div>
+  {% endfor %}
 </div>
-{% endfor %} {% endblock %}
+{% endblock %}
