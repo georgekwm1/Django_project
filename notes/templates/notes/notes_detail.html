@@ -1,9 +1,9 @@
 {% extends "base.html"%} {% block content %}
-
+<div class="w3-center">
 <h2>{{ note.title }}</h2>
 <p>{{ note.text }}</p>
 <a href="{% url 'note.delete' pk=note.id %}"
   ><button class="w3-button w3-black">Delete</button></a
 >
-
+</div>
 {% endblock %}
